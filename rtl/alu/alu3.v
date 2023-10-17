@@ -9,12 +9,11 @@ module ALU(
 always @(*)
 begin 
  case(alu_control)
- 3'b000: result = a + b; // add
- 3'b001: result = a - b; // sub
- 3'b011: result = a<<b;  // sll
- 3'b100: result = a>>b;  // srl
- 3'b101: result = a >>> b; // sra
- default:result = a + b; // add
+ 3'b000: result = a < b; // less than
+ 3'b001: result = a <= b; // less than equal
+ 3'b011: result = a > b;  // greater than
+ 3'b100: result = a >= b;  // greater than equal
+ default:result = a < b; // less than
  endcase
 end
  
