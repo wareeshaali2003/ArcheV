@@ -2,7 +2,6 @@ module Control_Unit(
   input [6:0] opcode,
   input [2:0] funct3,
   input [6:0] funct7,
-
   output [1:0] alu_op,
   output jump,
          branch,
@@ -16,26 +15,37 @@ module Control_Unit(
 always @(*)
 begin
   case(opcode) 
-    4'b0010011:  // I-Type
+    4'b0000011:  // load
       begin
         alu_src = 1'b0;
-        mem_to_reg = 1'b0;
+        mem_to_reg = 1'b1;
         reg_write = 1'b1;
-        mem_read = 1'b0;
+        mem_read = 1'b1;
         mem_write = 1'b0;
         branch = 1'b0;
         alu_op = 2'b10;
         jump = 1'b0;   
       end
-    4'b0010111:  // auipc
+    4'b0100011:  // S-Type
       begin
         alu_src = 1'b0;
         mem_to_reg = 1'b0;
-        reg_write = 1'b1;
+        reg_write = 1'b0;
         mem_read = 1'b0;
         mem_write = 1'b1;
         branch = 1'b0;
-        alu_op = 2'b00;
+        alu_op = 2'b10;
+        jump = 1'b0;   
+      end
+    4'b0110011:  // R-Type
+      begin
+        alu_src = 1'b1;
+        mem_to_reg = 1'b0;
+        reg_write = 1'b1;
+        mem_read = 1'b0;
+        mem_write = 1'b0;
+        branch = 1'b0;
+        alu_op = 2'b01;
         jump = 1'b0;   
       end
     default:

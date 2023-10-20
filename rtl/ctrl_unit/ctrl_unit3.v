@@ -16,7 +16,7 @@ module Control_Unit(
 always @(*)
 begin
   case(opcode) 
-    4'b0010011:  // I-Type
+    4'b0010011:  // lui
       begin
         alu_src = 1'b0;
         mem_to_reg = 1'b0;
@@ -27,16 +27,38 @@ begin
         alu_op = 2'b10;
         jump = 1'b0;   
       end
-    4'b0010111:  // auipc
+    4'b0010111:  // B-Type
+      begin
+        alu_src = 1'b1;
+        mem_to_reg = 1'b0;
+        reg_write = 1'b0;
+        mem_read = 1'b0;
+        mem_write = 1'b0;
+        branch = 1'b1;
+        alu_op = 2'b00;
+        jump = 1'b0;   
+      end
+    4'b1101111:  // J-Type
       begin
         alu_src = 1'b0;
         mem_to_reg = 1'b0;
         reg_write = 1'b1;
         mem_read = 1'b0;
-        mem_write = 1'b1;
+        mem_write = 1'b0;
         branch = 1'b0;
         alu_op = 2'b00;
-        jump = 1'b0;   
+        jump = 1'b1;   
+      end
+    4'b1100111:  // jalr
+      begin
+        alu_src = 1'b0;
+        mem_to_reg = 1'b0;
+        reg_write = 1'b1;
+        mem_read = 1'b0;
+        mem_write = 1'b0;
+        branch = 1'b0;
+        alu_op = 2'b00;
+        jump = 1'b1;   
       end
     default:
       begin
