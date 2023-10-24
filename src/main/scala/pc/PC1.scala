@@ -27,5 +27,5 @@ class PC1 extends Module {
 import circt.stage.ChiselStage
 
 object VerilogMain extends App {
-    ChiselStage.emitFIRRTLDialect(new PC1)
+    ChiselStage.emitSystemVerilogFile(new PC1)
 }
