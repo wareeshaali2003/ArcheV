@@ -1,6 +1,7 @@
 package pc
 
 import chisel3._
+import circt.stage.ChiselStage
 
 
 class PCIO extends Bundle {
@@ -24,8 +25,7 @@ class PC1 extends Module {
 }
 
 
-import circt.stage.ChiselStage
 
-object VerilogMain extends App {
+object VerilogMain1 extends App {
     ChiselStage.emitSystemVerilogFile(new PC1)
 }
