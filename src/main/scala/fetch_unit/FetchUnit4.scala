@@ -1,10 +1,10 @@
-package pc
+package fetch_unit
 
 import chisel3._
 import circt.stage.ChiselStage
 
 
-class PCIO4 extends Bundle {
+class FetchUnitIO4 extends Bundle {
     val imm: SInt = Input(SInt(32.W))
     val jal_en: Bool = Input(Bool())
 
@@ -12,8 +12,8 @@ class PCIO4 extends Bundle {
 }
 
 
-class PC4 extends Module {
-    val io: PCIO4 = IO(new PCIO4)
+class FetchUnit4 extends Module {
+    val io: FetchUnitIO4 = IO(new FetchUnitIO4)
 
     // Program Counter
     val pc: UInt = RegInit(0.U(32.W))
@@ -29,5 +29,5 @@ class PC4 extends Module {
 
 
 object VerilogMain4 extends App {
-    ChiselStage.emitSystemVerilogFile(new PC4)
+    ChiselStage.emitSystemVerilogFile(new FetchUnit4)
 }

@@ -1,11 +1,11 @@
-package pc
+package fetch_unit
 
 import chisel3._
 import circt.stage.ChiselStage
 import chisel3.util._
 
 
-class PCIO8 extends Bundle {
+class FetchUnitIO8 extends Bundle {
     val npc: UInt = Input(UInt(32.W))
     val ctrl: Vec[Bool] = Input(Vec(2, Bool()))
 
@@ -13,8 +13,8 @@ class PCIO8 extends Bundle {
 }
 
 
-class PC8 extends Module {
-    val io: PCIO8 = IO(new PCIO8)
+class FetchUnit8 extends Module {
+    val io: FetchUnitIO8 = IO(new FetchUnitIO8)
 
     // Program Counter
     val pc: UInt = RegInit(0.U(32.W))
@@ -33,5 +33,5 @@ class PC8 extends Module {
 
 
 object VerilogMain8 extends App {
-    ChiselStage.emitSystemVerilogFile(new PC8)
+    ChiselStage.emitSystemVerilogFile(new FetchUnit8)
 }

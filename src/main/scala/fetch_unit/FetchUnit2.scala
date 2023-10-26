@@ -1,18 +1,18 @@
-package pc
+package fetch_unit
 
 import chisel3._
 import circt.stage.ChiselStage
 
 
-class PCIO2 extends Bundle {
+class FetchUnitIO2 extends Bundle {
     val stall: Bool = Input(Bool())
 
     val pc: UInt = Output(UInt(32.W))
 }
 
 
-class PC2 extends Module {
-    val io: PCIO2 = IO(new PCIO2)
+class FetchUnit2 extends Module {
+    val io: FetchUnitIO2 = IO(new FetchUnitIO2)
 
     // Program Counter
     val pc: UInt = RegInit(0.U(32.W))
@@ -28,5 +28,5 @@ class PC2 extends Module {
 
 
 object VerilogMain2 extends App {
-    ChiselStage.emitSystemVerilogFile(new PC2)
+    ChiselStage.emitSystemVerilogFile(new FetchUnit2)
 }
