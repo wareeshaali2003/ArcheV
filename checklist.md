@@ -11,4 +11,10 @@
 - [ ] 8: `npc` (external calculation) and unaligned memory access stall selection (boolean vectors); `pc + 4`, `npc` and `pc` next pc.
 - [ ] 9: `jal` (internal calculation) and unaligned memory access stall selection (explicit naming); `pc + 4`, `jal` and `pc` next pc.
 - [ ] 10: `jal` (internal calculation) and unaligned memory access stall selection (boolean vector); `pc + 4`, `jal` and `pc` next pc.
-- [ ] 11: `jalr` (internal calculation) and unaligned memory access stall selection (explicit naming); `pc + 4`, `jal` and `pc` next pc.
+- [ ] 11: `jalr` (internal calculation) and unaligned memory access stall selection (explicit naming); `pc + 4`, `jalr` and `pc` next pc.
+- [ ] 12: `jalr` (internal calculation) and unaligned memory access stall selection (boolean vector); `pc + 4`, `jalr` and `pc` next pc.
+- [ ] 13: `jal` and `jalr` (internal calculation), and unaligned memory access stall selection (explicit naming); `pc + 4`, `jalr`, `jal` and `pc` next pc
+- [ ] 14: `jal` and `jalr` (internal calculation), and unaligned memory access stall selection (boolean vector); `pc + 4`, `pc`, `jalr` and `jal` next pc
+- [ ] 15: `branch` and unaligned memory access stall selection (explicit naming); `pc` and `branch` next pc
+- [ ] 16: `jal` and `jalr` (internal calculation), and unaligned memory access stall selection (explicit naming); `pc + 4`, `jalr`, `jal` and `pc` next pc
+- [ ] 17: `jal` and `jalr` (internal calculation), and unaligned memory access stall selection (explicit naming); `pc + 4`, `pc`, `jal` and `jalr` next pc
