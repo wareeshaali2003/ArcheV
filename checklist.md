@@ -11,3 +11,4 @@
 - [ ] 8: `npc` (external calculation) and unaligned memory access stall selection (boolean vectors); `pc + 4`, `npc` and `pc` next pc.
 - [ ] 9: `jal` (internal calculation) and unaligned memory access stall selection (explicit naming); `pc + 4`, `jal` and `pc` next pc.
 - [ ] 10: `jal` (internal calculation) and unaligned memory access stall selection (boolean vector); `pc + 4`, `jal` and `pc` next pc.
+- [ ] 11: `jalr` (internal calculation) and unaligned memory access stall selection (explicit naming); `pc + 4`, `jal` and `pc` next pc.
