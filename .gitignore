@@ -341,4 +341,4 @@ hs_err_pid*
 
 .bloop/
 .metals/
-venv/
+.venv/
