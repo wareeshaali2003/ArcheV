@@ -5,7 +5,7 @@ import circt.stage.ChiselStage,
        chisel3.util._
 
 
-class FetchUnit17 extends Module {
+class FetchUnit19 extends Module {
     //noinspection TypeAnnotation
     val io = IO(new Bundle {
         val imm     : SInt = Input(SInt(32.W))
@@ -20,14 +20,14 @@ class FetchUnit17 extends Module {
     val pc: UInt = RegInit(0.U(32.W))
 
     pc := MuxCase(pc + 4.U, Seq(
+        io.jal_en   -> (pc + io.imm.asUInt),
         io.stall_en -> pc,
-        io.jalr_en  -> (io.rs1 + io.imm).asUInt,
-        io.jal_en   -> (pc + io.imm.asUInt)
+        io.jalr_en  -> (io.rs1 + io.imm).asUInt
     ))
     io.pc := pc
 }
 
 
-object VerilogMain17 extends App {
-    ChiselStage.emitSystemVerilogFile(new FetchUnit17)
+object VerilogMain19 extends App {
+    ChiselStage.emitSystemVerilogFile(new FetchUnit19)
 }
