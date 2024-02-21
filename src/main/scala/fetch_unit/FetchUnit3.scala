@@ -1,9 +1,15 @@
 package fetch_unit
 
+// import chisel3._
+// import circt.stage.ChiselStage
+
+// import chisel3._
+import chisel3.util._
 import chisel3._
-import circt.stage.ChiselStage
 
+import chisel3.experimental.BundleLiterals._
 
+ 
 class FetchUnitIO3 extends Bundle {
     val npc: UInt = Input(UInt(32.W))
     val npc_en: Bool = Input(Bool())
@@ -28,6 +34,6 @@ class FetchUnit3 extends Module {
 }
 
 
-object VerilogMain3 extends App {
-    ChiselStage.emitSystemVerilogFile(new FetchUnit3)
-}
+// object VerilogMain3 extends App {
+//     ChiselStage.emitSystemVerilogFile(new FetchUnit3)
+// }

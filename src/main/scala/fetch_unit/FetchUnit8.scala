@@ -5,6 +5,11 @@ import circt.stage.ChiselStage
 import chisel3.util._
 
 
+import chisel3._
+
+import chisel3.experimental.BundleLiterals._
+
+ 
 class FetchUnitIO8 extends Bundle {
     val npc: UInt = Input(UInt(32.W))
     val ctrl: Vec[Bool] = Input(Vec(2, Bool()))
@@ -32,6 +37,6 @@ class FetchUnit8 extends Module {
 }
 
 
-object VerilogMain8 extends App {
-    ChiselStage.emitSystemVerilogFile(new FetchUnit8)
-}
+// object VerilogMain8 extends App {
+//     ChiselStage.emitSystemVerilogFile(new FetchUnit8)
+// }

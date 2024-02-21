@@ -5,6 +5,9 @@ import circt.stage.ChiselStage,
        chisel3.util._
 
 
+import chisel3.experimental.BundleLiterals._
+
+ 
 class FetchUnit15 extends Module {
     //noinspection TypeAnnotation
     val io = IO(new Bundle {
@@ -25,6 +28,6 @@ class FetchUnit15 extends Module {
 }
 
 
-object VerilogMain15 extends App {
-    ChiselStage.emitSystemVerilogFile(new FetchUnit15)
-}
+// object VerilogMain15 extends App {
+//     ChiselStage.emitSystemVerilogFile(new FetchUnit15)
+// }

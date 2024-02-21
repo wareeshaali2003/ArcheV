@@ -1,10 +1,16 @@
 package fetch_unit
 
-import circt.stage.ChiselStage,
-       chisel3._,
-       chisel3.util._
+// import circt.stage.ChiselStage,
+//        chisel3._,
+//        chisel3.util._
+import chisel3._
+import chisel3.util._
 
+import chisel3._
 
+import chisel3.experimental.BundleLiterals._
+
+ 
 class FetchUnit9 extends Module {
     //noinspection TypeAnnotation
     val io = IO(new Bundle {
@@ -25,6 +31,6 @@ class FetchUnit9 extends Module {
 }
 
 
-object VerilogMain9 extends App {
-    ChiselStage.emitSystemVerilogFile(new FetchUnit9)
-}
+// object VerilogMain9 extends App {
+//     ChiselStage.emitSystemVerilogFile(new FetchUnit9)
+// }
