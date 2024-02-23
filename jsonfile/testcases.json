@@ -1,39 +1,97 @@
 
-  {  "Type": {
-      "RISCV submodule": { 
-
-      "Decoder1": { "input": { "32_bits":{"inst":"0.U" } , "4_vec":{"ctrl":"0.U" }} ,
-      "output":{"3_bits":{"func3":"0.U"} ,
-      "7_bits":{"opcode":"0.U",
-      "func7":"0.U"},
-      "32_bits":{"imm":"0.U"},
-      "3_vec":{"raddr":"0.U"}}}
-
-
-      ,"FetchUnit1": { "input": { "32_bits":{"pc":"0.U"}}},  
-      "FetchUnit2": { "input": { "1_bit":{"stall":"0.B" }
-      },"output":{"32_bits":{"pc":"0.U"}}},
-
-
-      "FetchUnit3": { "input": { "32_bits":{"npc":"0.U" } ,
-      "1_bit":{"npc_en":"0.B" } 
-      },"output":{"32_bits":{"pc":"0.U"}}},
-
-
-      "FetchUnit4": { "input": { "32_bits":{"imm":"0.S" } ,"1_bit":{"jal_en":"0.B" }},
-      "output":{"32_bits":{"pc":"0.U"}}},
-
-
-      "FetchUnit5": { "input": { "32_bits":{"imm":"0.S","rs1":"0.S" } 
-      },"output":{"32_bit":{"pc":"0.U"}}},
-
-
-      "FetchUnit6": { "input": { "32_bits":{"imm":"0.S","rs1":"0.S"} ,
-      "2_bit":{"npc_en":"0.U" }
-      },"output":{"32_bits":{"pc":"0.U"}}},
-
-
-      "FetchUnit7": { "input": { "32_bits":{"npc":"0.U" } 
+  {
+    "Type": {
+      "RISCV submodule": {
+        "Decoder": {
+          "input": {
+            "32_bits":{
+              "inst":"0.U"
+            },
+            "4_vec":{
+              "ctrl":"0.U"
+            }} ,
+            "output":{
+              "3_bits":{
+                "func3":"0.U"
+                } ,
+                "7_bits":{
+                  "opcode":"0.U",
+                  "func7":"0.U"
+                },
+                "32_bits":{
+                  "imm":"0.U"
+                },
+                "3_vec":{
+                  "raddr":"0.U"
+                  }}}
+                  ,"FetchUnit1": 
+                  { 
+                    "input": 
+                    {
+                       "32_bits":{
+                        "pc":"0.U"
+                        }}},  
+                        "FetchUnit2": {
+                           "input": { 
+                            "1_bit":{
+                              "stall":"0.B"
+                             }},
+                             "output":{
+                              "32_bits":{
+                                "pc":"0.U"
+                                }}},
+                                "FetchUnit3": {
+                                   "input": { 
+                                    "32_bits":{
+                                      "npc":"0.U" 
+                                      } ,
+                                      "1_bit":{
+                                        "npc_en":"0.B" 
+                                      }},
+                                      "output":{
+                                        "32_bits":{
+                                          "pc":"0.U"
+                                          }}},
+                                          "FetchUnit4": { 
+                                            "input": { 
+                                              "32_bits":{
+                                                "imm":"0.S"
+                                                 } ,
+                                                 "1_bit":{ 
+                                                  "jal_en":"0.B"
+                                                   }},
+                                                   "output":{
+                                                    "32_bits":{
+                                                      "pc":"0.U"
+                                                      }}},
+                                                      "FetchUnit5": { 
+                                                        "input": { 
+                                                          "32_bits":{
+                                                            "imm":"0.S",
+                                                            "rs1":"0.S" 
+                                                          }},
+                                                          "output":{
+                                                            "32_bit":{
+                                                              "pc":"0.U"
+                                                              }}},
+                                                              "FetchUnit6": {
+                                                                 "input": { 
+                                                                  "32_bits":{ 
+                                                                    "imm":"0.S",
+                                                                    "rs1":"0.S"
+                                                                    } ,
+                                                                    "2_bit":{
+                                                                      "npc_en":"0.U"
+                                                                     }},
+                                                                     "output":{
+                                                                      "32_bits":{
+                                                                        "pc":"0.U"
+                                                                        }}},
+                                                                        "FetchUnit7": {
+                                                                           "input": {
+                                                                             "32_bits":{
+                                                                              "npc":"0.U" 
+                                                                            } 
       },"output":{"1_bits":{"npc_en":"0.B","stall_en":"0.B"}}},
 
 

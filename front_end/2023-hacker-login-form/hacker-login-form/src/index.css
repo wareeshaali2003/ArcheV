@@ -107,7 +107,7 @@ section .signin .content
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+  gap: 10px;
 }
 section .signin .content h2 
 {
@@ -123,8 +123,41 @@ section .signin .content .form
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 1px;
 }
+.container {
+  margin: 20px;
+}
+
+#filePathInput {
+  width: 625px;
+  /* padding: 8px; */
+  margin-right: 10px;
+  /* margin-right: 10px; */
+  /* transition: all 0.3s ease; */
+  
+}
+
+#browseFileBtn {
+  /* padding: 8px 20px; */
+  padding: 25px 10px 7.5px;
+  width: 100px;
+  background-color: #30d6e9;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  
+}
+.bold-text {
+  font-weight: bold;
+}
+
+
+.hidden {
+  display: none;
+}
+
 section .signin .content .form .inputBox
 {
   padding: 20px 19px;
@@ -163,18 +196,14 @@ section .signin .content .form .inputBox i
   color: #fff;
   
 }
-.signin .content .form .links 
+/* .signin .content .form .links 
 {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
-}
-.signin .content .form .links a 
-{
-  color: #fff;
-  text-decoration: none;
-}
+} */
+
 .signin .content .form .links a:nth-child(2)
 {
   color: rgb(41, 239, 222);
