@@ -85,7 +85,6 @@ body {
   height: 100vh; /* Viewport height */
 }
 
-
 .logo-container {
   display: flex;
   justify-content: center;
@@ -108,41 +107,122 @@ section .signin .content
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* gap: 10px; */
+  gap: 10px;
 }
 section .signin .content h2 
 {
 
   font-size: 2em;
-  color: rgb(255, 255, 255);
+  color: rgb(30, 253, 242);
   text-transform: uppercase;
-  margin-top: 10px; 
-  margin-left: 10px; 
+  margin-top: 50px; 
+  margin-left: 20px; 
 }
 section .signin .content .form 
 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1px;
+}
+.container {
+  margin: 20px;
+}
+
+#folderPathInput {
+  width: 625px;
+  /* padding: 8px; */
+  margin-right: 10px;
+  /* margin-right: 10px; */
+  /* transition: all 0.3s ease; */
+  
+}
+
+#browseFolderBtn {
+  /* padding: 8px 20px; */
+  padding: 25px 10px 7.5px;
+  width: 100px;
+  background-color: #30d6e9;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  
+}
+.bold-text {
+  font-weight: bold;
 }
 
 
-
-
-
-
-/* styles.css */
-.box {
-    width: 700px;
-    height: 300px;
-    background-color: #10e8dd;
-    border: 1px solid #10e8dd;
-    /* padding: 20px; */
-    /* margin: 20px; */
+.hidden {
+  display: none;
 }
 
+section .signin .content .form .inputBox
+{
+  padding: 20px 19px;
+  position: relative;
+  width: 100%;
+}
+section .signin .content .form .inputBox input 
+{
+  position: relative;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+}
+section .signin .content .form .inputBox i 
+{
+  position: absolute;
+  left: 0;
+  padding: 10px 30px;
+  font-style: normal;
+  color: #aaa;
+  margin-bottom: 10px; 
+  transition: 0.5s;
+  pointer-events: none;
+}
+.signin .content .form .inputBox input:focus ~ i,
+.signin .content .form .inputBox input:valid ~ i
+{
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #fff;
+  
+}
+/* .signin .content .form .links 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+} */
 
+.signin .content .form .links a:nth-child(2)
+{
+  color: rgb(41, 239, 222);
+  font-weight: 600;
+}
+.signin .content .form .inputBox input[type="submit"]
+{
+  padding: 10px;
+  background: rgb(27, 223, 213);
+  color: #000;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
 @media (max-width: 900px)
 {
   section span 
