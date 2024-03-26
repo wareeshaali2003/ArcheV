@@ -7,7 +7,7 @@ if __name__ == "__main__":
     windows["main"] = webview.create_window(
         title="ArcheV",
         # url="front_end/web/splash_page.html",
-        url="front_end/web/index.html",
+        url="front_end/web/index.html", 
         resizable=False,
         width=1570,
         height=900
